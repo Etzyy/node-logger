@@ -49,7 +49,7 @@ var Logger = function(log_file_path) {
     log_file_path = path.normalize(log_file_path);
     this.stream = fs.createWriteStream(log_file_path, {flags: 'a', encoding: 'utf8', mode: 0666});
     this.stream.write("\n");
-    this.write = function(text) { this.stream.write(text); };
+    this.write = function(text) { this.stream.write(text); sys.print(text) };
   }
 };
 
