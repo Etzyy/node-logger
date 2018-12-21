@@ -53,7 +53,7 @@ var Logger = function(log_file_path) {
   }
 };
 
-Logger.levels = ['fatal', 'error', 'warn', 'info', 'debug'];
+Logger.prototype.levels = ['fatal', 'error', 'warn', 'info', 'debug'];
 
 // The default log formatting function. The default format looks something like:
 //
@@ -101,7 +101,7 @@ Logger.prototype.log = function() {
   return false;
 };
 
-Logger.levels.forEach(function(level) {
+Logger.prototype.levels.forEach(function(level) {
   Logger.prototype[level] = function() {
     var args = makeArray(arguments);
     args.unshift(level);
